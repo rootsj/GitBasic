@@ -3,7 +3,7 @@
 git 협업 시 기초적인 정보
 
 #### Step01. 추가 및 삭제의 위험
-![gitmode](images/gitmode.png)
+![gitmodel](images/gitmodel.png)
 
 
 #### Step02. git pull 작업 시 conflict 문제
