@@ -3,6 +3,26 @@
 git 협업 시 기초적인 정보
 
 #### Step01. 추가 및 삭제의 위험
+
+Step01.master를 기준으로
+Step01.another와 Step01.mine이 동시에 작업을 한다.
+
+Step01.another가 실수로 3번 파일을 master에 merge 하였고
+Step01.mine이 삭제된 내용을 인지하지 못했을 경우
+
+Step01.master를 pull로 당겼을 시
+3번 파일이 날아간다.
+
+---
+branch에서 pull로 작업 시 (branch와 branch 이동이라) merge가 일어나나 <br>
+master에서는 merge를 인지하지 못하고 바로 변경점이 적용된다
+
+---
+파일 추가시 경고를 안하듯이 <br>
+삭제도 경고를 안함
+
+master에 직접 pull과 push를 이용 시 파일 관리의 어려움이 상승함 <br>
+참고 - https://m.blog.naver.com/PostView.nhn?blogId=mug896&logNo=140191101787&proxyReferer=https:%2F%2Fwww.google.com%2F
 ![gitmodel](images/gitmodel.png)
 
 
@@ -55,6 +75,7 @@ git bash 실행 후
 - git branch -a 로컬 브랜치 목록보기
 
 - git reset --hard (코드 수정내역(push전, commit) 초기화, head초기화
+- git reset --hard origin/name 특정시점 헤드로 이동
 
 - git pull origin Vue.dev1.01 --allow-unrelated-histories // history내역 상관없이 pull
 
