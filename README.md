@@ -3,10 +3,11 @@
 git 협업 시 기초적인 정보
 
 #### Step01. 추가 및 삭제의 위험
+![gitmode](images/gitmode.png)
 
 
 #### Step02. git pull 작업 시 conflict 문제
-
+pull = fetch + merge
 
 #### Step03. push와 merge, github를 통한 관리
 
@@ -56,3 +57,7 @@ git bash 실행 후
 - git reset --hard (코드 수정내역(push전, commit) 초기화, head초기화
 
 - git pull origin Vue.dev1.01 --allow-unrelated-histories // history내역 상관없이 pull
+
+#### 더 공부하고 싶으신 분
+https://git-scm.com/book/ko/v2
+https://nvie.com/posts/a-successful-git-branching-model/
