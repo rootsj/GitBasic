@@ -3,15 +3,66 @@
 git 협업 시 기초적인 정보
 
 #### Step01. 추가 및 삭제의 위험
+
+Step01.master를 기준으로
+Step01.another와 Step01.mine이 동시에 작업을 한다.
+
+Step01.another가 실수로 3번 파일을 master에 merge 하였고
+Step01.mine이 삭제된 내용을 인지하지 못했을 경우
+
+Step01.master를 pull로 당겼을 시
+3번 파일이 날아간다.
+
+---
+branch에서 pull로 작업 시 (branch와 branch 이동이라) merge가 일어나나 <br>
+master에서는 merge를 인지하지 못하고 바로 변경점이 적용된다
+
+---
+파일 추가시 경고를 안하듯이 <br>
+삭제도 경고를 안함
+
+master에 직접 pull과 push를 이용 시 파일 관리의 어려움이 상승함 <br>
+참고 - https://m.blog.naver.com/PostView.nhn?blogId=mug896&logNo=140191101787&proxyReferer=https:%2F%2Fwww.google.com%2F
 ![gitmodel](images/gitmodel.png)
 
 
 #### Step02. git pull 작업 시 conflict 문제
-pull = fetch + merge
 
-#### Step03. push와 merge, github를 통한 관리
+- pull = fetch + merge
 
-#### Step04. Head와 history 문제 해결
+- push와 merge, github를 통한 관리
+
+Step02.master를 mater의 개념으로 pull 진행 후
+Step02.another로 pull request 진행하여 확인
+
+나만의 branch를 생성 및 remote를만들어서 수정 후
+merge가 된 Step02.master를 pull로 당겨 merge가 생기는지
+이클립스, vsc 등 충돌 관리 후 
+
+add 및 commit 후 push 가능
+
+
+더 쉽게 해결하기 위한 추가 개념 단어) 
+- git reset (soft와 hard개념 등)
+- git stash (stash 활용 및 이용/ 알면 step03도 해결 가능)
+https://wit.nts-corp.com/2014/03/25/1153
+
+#### Step03. Head와 history 문제 해결
+
+- 문제 발생 경우
+Step02.master의 code를 다운 받고
+git init 후 git pull origin master 진행
+
+1. 자잘한 폴더 변경
+src를 Step03으로 윈도우에서 수정 및 정리 (master branch에서 진행)
+
+2. 원래내가쓰는 romote branch로 branch를 관리하려고 했는데 master에서 진행한 것을 확인
+
+3. git checkout -b origin name 후 remote branch와 헤드를 연결하기 위해 pull을 당겼으나 불가능
+
+4. git pull origin origin name --allow-unrelated-histories 로 해결 가능
+
+5. 그후 커밋 및 git push -f origin name 으로 진행 가능
 
 #### 기본적인 git 명령어
 
@@ -55,9 +106,12 @@ git bash 실행 후
 - git branch -a 로컬 브랜치 목록보기
 
 - git reset --hard (코드 수정내역(push전, commit) 초기화, head초기화
+- git reset --hard origin/name 특정시점 헤드로 이동
 
-- git pull origin Vue.dev1.01 --allow-unrelated-histories // history내역 상관없이 pull
+- git pull origin origin name --allow-unrelated-histories // history내역 상관없이 pull
 
 #### 더 공부하고 싶으신 분
-https://git-scm.com/book/ko/v2
-https://nvie.com/posts/a-successful-git-branching-model/
+오픈소스 참여를 위한 Git_Git 기본실습.pdf !참고! <br>
+https://git-scm.com/book/ko/v2 <br>
+https://nvie.com/posts/a-successful-git-branching-model/ <br>
+https://parksb.github.io/article/28.html
