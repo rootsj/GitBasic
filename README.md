@@ -27,15 +27,25 @@ master에 직접 pull과 push를 이용 시 파일 관리의 어려움이 상승
 
 
 #### Step02. git pull 작업 시 conflict 문제
-Step02.master를 mater의 개념으로 pull 진행 후
-Step02.another로 pull request 진행하여 확인
-
-나만의 branch를 생성 및 remote를만들어서 수정 후
-merge가 된 Step02.master를 pull로 당겨 merge가 어떻게 
 
 - pull = fetch + merge
 
 - push와 merge, github를 통한 관리
+
+Step02.master를 mater의 개념으로 pull 진행 후
+Step02.another로 pull request 진행하여 확인
+
+나만의 branch를 생성 및 remote를만들어서 수정 후
+merge가 된 Step02.master를 pull로 당겨 merge가 생기는지
+이클립스, vsc 등 충돌 관리 후 
+
+add 및 commit 후 push 가능
+
+
+더 쉽게 해결하기 위한 추가 개념 단어) 
+- git reset (soft와 hard개념 등)
+- git stash (stash 활용 및 이용/ 알면 step03도 해결 가능)
+https://wit.nts-corp.com/2014/03/25/1153
 
 #### Step03. Head와 history 문제 해결
 
