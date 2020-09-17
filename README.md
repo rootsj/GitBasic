@@ -27,11 +27,32 @@ master에 직접 pull과 push를 이용 시 파일 관리의 어려움이 상승
 
 
 #### Step02. git pull 작업 시 conflict 문제
-pull = fetch + merge
+Step02.master를 mater의 개념으로 pull 진행 후
+Step02.another로 pull request 진행하여 확인
 
-#### Step03. push와 merge, github를 통한 관리
+나만의 branch를 생성 및 remote를만들어서 수정 후
+merge가 된 Step02.master를 pull로 당겨 merge가 어떻게 
 
-#### Step04. Head와 history 문제 해결
+- pull = fetch + merge
+
+- push와 merge, github를 통한 관리
+
+#### Step03. Head와 history 문제 해결
+
+- 문제 발생 경우
+Step02.master의 code를 다운 받고
+git init 후 git pull origin master 진행
+
+1. 자잘한 폴더 변경
+src를 Step03으로 윈도우에서 수정 및 정리 (master branch에서 진행)
+
+2. 원래내가쓰는 romote branch로 branch를 관리하려고 했는데 master에서 진행한 것을 확인
+
+3. git checkout -b origin name 후 remote branch와 헤드를 연결하기 위해 pull을 당겼으나 불가능
+
+4. git pull origin origin name --allow-unrelated-histories 로 해결 가능
+
+5. 그후 커밋 및 git push -f origin name 으로 진행 가능
 
 #### 기본적인 git 명령어
 
@@ -77,8 +98,10 @@ git bash 실행 후
 - git reset --hard (코드 수정내역(push전, commit) 초기화, head초기화
 - git reset --hard origin/name 특정시점 헤드로 이동
 
-- git pull origin Vue.dev1.01 --allow-unrelated-histories // history내역 상관없이 pull
+- git pull origin origin name --allow-unrelated-histories // history내역 상관없이 pull
 
 #### 더 공부하고 싶으신 분
-https://git-scm.com/book/ko/v2
-https://nvie.com/posts/a-successful-git-branching-model/
+오픈소스 참여를 위한 Git_Git 기본실습.pdf !참고! <br>
+https://git-scm.com/book/ko/v2 <br>
+https://nvie.com/posts/a-successful-git-branching-model/ <br>
+https://parksb.github.io/article/28.html
